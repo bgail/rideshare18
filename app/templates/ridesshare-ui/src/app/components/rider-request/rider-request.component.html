@@ -1,7 +1,17 @@
-<div class="container">
-  <app-map-partial></app-map-partial>
-  <div class="alert alert-primary">
-    rider-request works!
+<header class="bar bar-nav">
+    <h1 class="title">TricyCall</h1>
+</header>
+
+<div class="content">
+  <div class="content-padded">
+    <app-map-partial 
+      [lat] = "32.231884"
+      [lon] = "-110.950111"
+    >
+    </app-map-partial>
+    <button class="btn btn-primary btn-block btn-outlined">
+      Request Ride
+    </button>
   </div>
 </div>
 

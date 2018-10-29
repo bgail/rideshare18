@@ -21,8 +21,8 @@ import { MapPartialComponent } from './components/map-partial/map-partial.compon
     AppRoutingModule,
     NgbModule,
     NgxMapboxGLModule.withConfig({
-      accessToken: 'TOKEN',
-      geocoderAccessToken: 'TOKEN'
+      accessToken: '',
+      // geocoderAccessToken: 'TOKEN'
     }),
   ],
   providers: [],

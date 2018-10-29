@@ -1,6 +1,20 @@
 <mgl-map
-    [style]="'mapbox://styles/mapbox/basic-v9'"
-    [zoom]="[9]"
-    [center]="[-74.50, 40]"
+    [style]="'mapbox://styles/mapbox/streets-v9'"
+    [zoom]="[17]"
+    [center]="[lon, lat]"
 >
+    <mgl-marker
+      [lngLat]="[lon, lat]"
+    >
+    </mgl-marker>
+
+    <div *ngIf="destLat && destLon"></div>
+    <mgl-marker
+      [lngLat]="[destLon, destLat]"
+    >
+    </mgl-marker>
+    <mgl-control
+        mglGeocoder
+        (result)="getDestCoordinates($event)"
+    ></mgl-control>
 </mgl-map>
