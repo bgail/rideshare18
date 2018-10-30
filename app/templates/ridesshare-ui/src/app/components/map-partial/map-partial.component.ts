@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-map-partial',
@@ -12,7 +12,15 @@ export class MapPartialComponent implements OnInit {
 
   private destLat = null;
   private destLon = null;
-  public geolocate = false;
+  public showPath = false;
+
+  geometry = {
+    type: 'LineString',
+    coordinates: [
+      [this.lon, this.lat],
+    ]
+  };
+
   constructor() { }
 
   ngOnInit() {
@@ -23,6 +31,14 @@ export class MapPartialComponent implements OnInit {
     if (coordinates.length !== 0) {
       this.destLon = coordinates[0];
       this.destLat = coordinates[1];
+      this.showPath = true;
+      this.geometry = {
+        type: 'LineString',
+        coordinates: [
+          [this.lon, this.lat],
+          [this.destLon, this.destLat],
+        ]
+      };
     }
   }
 
