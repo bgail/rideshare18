@@ -5,3 +5,7 @@
 **/e2e/
 
 **/*.pyc
+
+**/environment.ts
+
+**/environment.prod.ts
